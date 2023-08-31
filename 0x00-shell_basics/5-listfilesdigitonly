@@ -1,2 +1,2 @@
-#!/bin/basg
+#!/bin/bash
 ls -lan
