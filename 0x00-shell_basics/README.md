@@ -1,7 +1,8 @@
-Shell Basics
+**Shell Basics**
+
 This repository contains a collection of scripts written in the Shell scripting language. The scripts are designed to perform various tasks related to file management and directory operations. They are all developed based on the following requirements:
 
-General Requirements
+**General Requirements**
 Allowed editors: vi, vim, emacs
 All scripts will be tested on Ubuntu 20.04 LTS
 All scripts should be exactly two lines long ($ wc -l file should print 2)
@@ -12,11 +13,12 @@ A README.md file at the root of the project folder, describing what each script 
 The usage of backticks, &&, ||, or ; is not allowed
 All scripts must be executable. To make your file executable, use the chmod command: chmod u+x file
 Scripts
-Print Absolute Path: This script prints the absolute path name of the current working directory.
 
-Display Contents List: This script displays the contents list of the current directory.
+**Print Absolute Path:** This script prints the absolute path name of the current working directory.
 
-Change to Home Directory: This script changes the working directory to the user's home directory.
+**Display Contents List:** This script displays the contents list of the current directory.
+
+**Change to Home Directory:** This script changes the working directory to the user's home directory.
 
 Display Current Directory Contents (Long Format): This script displays the contents of the current directory in a long format, including user and group IDs displayed numerically.
 
