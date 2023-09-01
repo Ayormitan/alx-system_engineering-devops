@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -Ap | grep -E '/|,$' | sort -d -t '/' -k 2 | sed '$!N; s/\n/ /'
+ls -xamp
