@@ -12,14 +12,13 @@
 /**
  * infinite_while - Run an infinite while loop.
  *
- * Return: Always 0.
- *     
+ * Return: Always 0
  */
 int infinite_while(void)
 {
 	while (1)
 	{
-		sleep (1);
+		sleep(1);
 	}
 	return (0);
 }
@@ -32,6 +31,7 @@ int main(void)
 {
 	pid_t pid;
 	char count = 0;
+
 	while (count < 5)
 	{
 		pid = fork();
