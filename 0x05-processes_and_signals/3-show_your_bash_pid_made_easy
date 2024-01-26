@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Script get list of all process
+for pid in /proc/[0-9]*;
+do
+	if [ -d "$pid" ];
+	then
+		process_name=$(tr -d '\0' < "$pid"/cmdline)
+		process_name=$(basename "$process_name")
+		if [[ "$process_name" == *"bash"* ]];
+		then
+			echo "$(basename "$pid") $process_name"
+		fi
+	fi
+done
