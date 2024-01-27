@@ -1,4 +1,4 @@
-i!/usr/bin/env bash
+#!/usr/bin/env bash
 # Script wiil print "Best School and Hi on the 9th line"
 counter=1
 while [ "$counter" -le 10 ];
