@@ -1,0 +1,17 @@
+i!/usr/bin/env bash
+# Script wiil print "Best School and Hi on the 9th line"
+counter=1
+while [ "$counter" -le 10 ];
+do
+	if [ "$counter" -eq 4 ];
+	then
+		echo "bad luck"
+	elif [ "$counter" -eq 8 ];
+	then
+		echo "good luck"
+
+	else
+		echo "Best School"
+	fi
+	((counter++))
+done
