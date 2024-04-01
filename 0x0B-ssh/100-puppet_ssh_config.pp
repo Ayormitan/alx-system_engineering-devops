@@ -7,5 +7,5 @@ content =>"
 	#SSH client configuration
 	host*
 	IdentifyFile ~/.ssh/school
-	PasswordAuthentication no
+	PasswordAuthentication no"
 }
