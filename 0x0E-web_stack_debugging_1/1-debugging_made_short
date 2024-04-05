@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 # Script that restores the default server port
-
 ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 service nginx restart
-kill "$(grep 'nginx' | head -1)"
+kill "$(pgrep 'nginx' | head -1)"
