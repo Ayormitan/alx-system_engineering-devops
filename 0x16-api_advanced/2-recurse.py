@@ -31,31 +31,28 @@ def recurse(subreddit, hot_list=[], after="", count=0):
     }
 
     # Define parameters for the request, including pagination and limit
-    params = {
-        "after": after,
-        "count": count,
-        "limit": 100
-    }
-
-    # Send a GET request to the subreddit's hot posts page
+    params = {"after": after} if after else {}
+    # Send GET request to the subreddit's hot posts page
     response = requests.get(url, headers=headers, params=params,
                             allow_redirects=False)
 
-    # Check if the response status code indicates a not-found error (404)
-    if response.status_code == 404:
+    # Check if the response status code indicates success
+    if response.status_code == 200:
+        # Parse the JSON response and extract relevant data
+        results = response.json()
+        posts = data['data']['children']
+
+        # Return none if post is not found
+        if not posts:
+            return None
+        # Extract titles
+        titles = [post['data']['title'] for post in posts]
+
+        # Check more post
+        after = data['data'].get('after')
+        if after:
+        #Recursively fetch more post
+            titles += fetch_hot_titles(subreddit, after)
+        return titles
+    else:
         return None
-    # Parse the JSON response and extract relevant data
-    results = response.json().get("data")
-    after = results.get("after")
-    count += results.get("dist")
-
-    # Append post titles to the hot_list
-    for c in results.get("children"):
-        hot_list.append(c.get("data").get("title"))
-
-    # If there are more posts to retrieve, recursively call the function
-    if after is not None:
-        return recurse(subreddit, hot_list, after, count)
-
-    # Return the final list of hot post titles
-    return hot_list
